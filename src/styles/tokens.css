@@ -11,17 +11,6 @@
   --color-champagne: oklch(95% 0.022 92);    /* warm champagne blush */
   --color-muted:     oklch(54% 0.055 148);   /* sage muted text */
 
-  /* Stripe pattern — alternating dark green / cream (from Beach Club card) */
-  --stripe-dark:     oklch(30% 0.11 152);    /* deep hunter stripe */
-  --stripe-light:    oklch(97.5% 0.008 105); /* cream stripe */
-  --stripe-pattern:  repeating-linear-gradient(
-    90deg,
-    var(--stripe-dark)  0px,
-    var(--stripe-dark)  18px,
-    var(--stripe-light) 18px,
-    var(--stripe-light) 36px
-  );
-
   /* Typography */
   --font-display: 'Unbounded', sans-serif;
   --font-body:    'Mulish', sans-serif;
