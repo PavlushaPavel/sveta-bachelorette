@@ -55,9 +55,7 @@ export default function App() {
 
   return (
     <div className="screen-app">
-      <div key={currentScreen} className="screen">
-        <Screen gameState={gameState} {...handlers} />
-      </div>
+      <Screen key={currentScreen} gameState={gameState} {...handlers} />
     </div>
   )
 }
