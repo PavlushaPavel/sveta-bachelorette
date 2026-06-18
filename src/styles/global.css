@@ -15,7 +15,8 @@ body {
   background-color: var(--color-bg);
   color: var(--color-deep);
   -webkit-font-smoothing: antialiased;
-  overflow: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* scroll lives on .screen inside .screen-app, not on body */
 }
 
 /* Screen slide-in animation */
@@ -92,7 +93,17 @@ body {
 
 .screen-app {
   position: relative;
-  height: 100vh;
+  height: 100%; /* 100vh breaks in Telegram WebView on iOS — use 100% instead */
   overflow: hidden;
   background-color: var(--color-bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .screen,
+  .screen-title,
+  .screen-subtitle,
+  .screen-body,
+  .screen-cta {
+    animation: none;
+  }
 }

@@ -3,7 +3,7 @@
 
 :root {
   /* Colors */
-  --color-bg:        oklch(91% 0.12 132);
+  --color-bg:        oklch(91% 0.09 132); /* chroma kept ≤0.10 for sRGB safety on Android WebView */
   --color-surface:   oklch(96% 0.04 132);
   --color-deep:      oklch(38% 0.14 145);
   --color-lime-pop:  oklch(68% 0.22 132);
