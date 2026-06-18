@@ -1,0 +1,26 @@
+/* src/styles/tokens.css */
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Mulish:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --color-bg:        oklch(91% 0.12 132);
+  --color-surface:   oklch(96% 0.04 132);
+  --color-deep:      oklch(38% 0.14 145);
+  --color-lime-pop:  oklch(68% 0.22 132);
+  --color-gold:      oklch(68% 0.14 76);
+  --color-champagne: oklch(87% 0.05 88);
+  --color-muted:     oklch(52% 0.08 145);
+
+  /* Typography */
+  --font-display: 'Unbounded', sans-serif;
+  --font-body:    'Mulish', sans-serif;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+}

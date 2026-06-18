@@ -1,0 +1,98 @@
+/* src/styles/global.css */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-deep);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* Screen slide-in animation */
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* Content stagger animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.03); }
+}
+
+@keyframes toastIn {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+@keyframes toastOut {
+  from { transform: translateY(0);    opacity: 1; }
+  to   { transform: translateY(100%); opacity: 0; }
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  padding: var(--space-lg) var(--space-md) var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  animation: slideIn 380ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.screen-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--color-deep);
+  line-height: 1.2;
+  animation: fadeUp 280ms ease-out 200ms both;
+}
+
+.screen-subtitle {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-deep);
+  animation: fadeUp 280ms ease-out 280ms both;
+}
+
+.screen-body {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-deep);
+  animation: fadeUp 280ms ease-out 320ms both;
+}
+
+.screen-body p + p {
+  margin-top: var(--space-sm);
+}
+
+.screen-cta {
+  margin-top: auto;
+  padding-top: var(--space-lg);
+  animation: fadeUp 280ms ease-out 440ms both;
+}
+
+.screen-app {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
