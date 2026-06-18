@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { initialState, toggleCheckedItem, setFormatChoice, togglePackedItem } from './gameState'
 import Screen01Mission from './screens/Screen01Mission'
 import Screen02Identity from './screens/Screen02Identity'
@@ -22,6 +22,25 @@ const SCREENS = [
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState(0)
   const [gameState, setGameState] = useState(initialState)
+
+  useEffect(() => {
+    const tg = window.Telegram?.WebApp
+    if (!tg) return
+    tg.ready()
+    tg.expand()
+  }, [])
+
+  useEffect(() => {
+    const tg = window.Telegram?.WebApp
+    if (!tg) return
+    if (currentScreen > 0) {
+      tg.BackButton.show()
+      tg.BackButton.onClick(() => setCurrentScreen(s => Math.max(s - 1, 0)))
+    } else {
+      tg.BackButton.hide()
+    }
+    return () => tg.BackButton.offClick()
+  }, [currentScreen])
 
   const goNext = () => setCurrentScreen(s => Math.min(s + 1, SCREENS.length - 1))
 
