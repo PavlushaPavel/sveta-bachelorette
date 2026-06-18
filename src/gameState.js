@@ -1,4 +1,6 @@
 // src/gameState.js
+export const PACK_ITEM_COUNT = 5
+
 export const initialState = {
   checkedItems: new Set(),
   formatChoice: null,
@@ -24,7 +26,7 @@ export function togglePackedItem(state, item) {
 }
 
 export function isPackComplete(state) {
-  return state.packedItems.size === 5
+  return state.packedItems.size === PACK_ITEM_COUNT
 }
 
 export function isIdentityConfirmed(state) {
