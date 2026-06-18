@@ -2,14 +2,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Mulish:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Colors */
-  --color-bg:        oklch(91% 0.09 132); /* chroma kept ≤0.10 for sRGB safety on Android WebView */
-  --color-surface:   oklch(96% 0.04 132);
-  --color-deep:      oklch(38% 0.14 145);
-  --color-lime-pop:  oklch(68% 0.22 132);
-  --color-gold:      oklch(68% 0.14 76);
-  --color-champagne: oklch(87% 0.05 88);
-  --color-muted:     oklch(52% 0.08 145);
+  /* Colors — Beach Club palette extracted from mood board reference */
+  --color-bg:        oklch(97.5% 0.008 105); /* warm ivory — cream white of the stripe card */
+  --color-surface:   oklch(94% 0.032 140);   /* sage green — card surfaces */
+  --color-deep:      oklch(28% 0.10 153);    /* hunter green — dark stripe color */
+  --color-lime-pop:  oklch(57% 0.19 144);    /* botanical green — CTAs */
+  --color-gold:      oklch(67% 0.13 73);     /* prosecco gold */
+  --color-champagne: oklch(95% 0.022 92);    /* warm champagne blush */
+  --color-muted:     oklch(54% 0.055 148);   /* sage muted text */
+
+  /* Stripe pattern — alternating dark green / cream (from Beach Club card) */
+  --stripe-dark:     oklch(30% 0.11 152);    /* deep hunter stripe */
+  --stripe-light:    oklch(97.5% 0.008 105); /* cream stripe */
+  --stripe-pattern:  repeating-linear-gradient(
+    90deg,
+    var(--stripe-dark)  0px,
+    var(--stripe-dark)  18px,
+    var(--stripe-light) 18px,
+    var(--stripe-light) 36px
+  );
 
   /* Typography */
   --font-display: 'Unbounded', sans-serif;

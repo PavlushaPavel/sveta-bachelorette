@@ -66,6 +66,29 @@ body {
   animation: fadeUp 280ms ease-out 200ms both;
 }
 
+/* Beach Club stripe accent — a thin stripe band above screen titles */
+.screen-title::before {
+  content: '';
+  display: block;
+  height: 8px;
+  width: 64px;
+  background: var(--stripe-pattern);
+  border-radius: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+/* Stripe card — full stripe panel (used on key screens) */
+.stripe-card {
+  background: var(--stripe-pattern);
+  color: var(--stripe-light);
+  border-radius: 16px;
+  padding: var(--space-lg);
+}
+
+.stripe-card p, .stripe-card h2, .stripe-card h3 {
+  color: var(--stripe-light);
+}
+
 .screen-subtitle {
   font-family: var(--font-display);
   font-size: 1rem;
