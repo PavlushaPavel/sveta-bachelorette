@@ -37,8 +37,8 @@ export default function Screen02Identity({ gameState, onToggleChecked, onNext })
         src={photos.fullBodyWhite}
         alt="Света в белом платье у каменной стены"
         caption="main character"
-        className="hero-photo contain"
-        style={{ '--tilt': '2deg', '--pos': 'center top', minHeight: 430, aspectRatio: '0.62' }}
+        className="hero-photo"
+        style={{ '--tilt': '2deg', '--pos': 'center top', minHeight: 430, aspectRatio: '0.84' }}
       />
       <div className="screen-body">
         <p>Для допуска к девичнику нужно подтвердить, что перед нами настоящая Света.</p>

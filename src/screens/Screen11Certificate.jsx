@@ -1,9 +1,19 @@
 import Button from '../components/Button'
+import { useState } from 'react'
+
 export default function Screen11Certificate() {
+  const [accepted, setAccepted] = useState(false)
+
   const handleClose = () => {
     const tg = window.Telegram?.WebApp
-    if (tg) { tg.MainButton.setText('Принято'); tg.MainButton.show(); tg.MainButton.onClick(() => tg.close()) }
+    setAccepted(true)
+    if (tg?.close) {
+      tg.close()
+      return
+    }
+    window.close?.()
   }
+
   return (
     <div className="screen">
       <span className="eyebrow">Access granted</span>
@@ -26,11 +36,20 @@ export default function Screen11Certificate() {
         <p style={{ fontSize: '0.75rem', color: 'var(--color-muted)', lineHeight: 1.6 }}>Ответственные: подруги, Фил, Люсик<br />и немного просекко.</p>
       </div>
       <div className="screen-body" style={{ textAlign: 'center', animation: 'fadeUp 280ms ease-out 700ms both' }}>
-        <p style={{ fontWeight: 700 }}>Света, готовься.</p>
-        <p>Это будет не просто девичник.</p>
-        <p style={{ marginTop: 'var(--space-sm)', color: 'var(--color-muted)', fontSize: '0.9rem' }}>Это будет история, в которую ты снова влипнешь —<br />но в этот раз красиво, при параде и с бокалом в руке.</p>
+        {accepted ? (
+          <>
+            <p style={{ fontWeight: 700 }}>Принято.</p>
+            <p style={{ marginTop: 'var(--space-sm)', color: 'var(--color-muted)', fontSize: '0.9rem' }}>Если окно не закрылось автоматически, можно закрыть его вручную.</p>
+          </>
+        ) : (
+          <>
+            <p style={{ fontWeight: 700 }}>Света, готовься.</p>
+            <p>Это будет не просто девичник.</p>
+            <p style={{ marginTop: 'var(--space-sm)', color: 'var(--color-muted)', fontSize: '0.9rem' }}>Это будет история, в которую ты снова влипнешь —<br />но в этот раз красиво, при параде и с бокалом в руке.</p>
+          </>
+        )}
       </div>
-      <div className="screen-cta"><Button onClick={handleClose}>Принято</Button></div>
+      <div className="screen-cta"><Button onClick={handleClose}>{accepted ? 'Можно закрывать' : 'Принято'}</Button></div>
     </div>
   )
 }
