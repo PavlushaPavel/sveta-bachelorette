@@ -8,12 +8,12 @@ export default function Screen01Mission({ onNext }) {
       <span className="eyebrow">Sveta Beach Club</span>
       <div className="photo-strip">
         <PhotoCard
-          src={photos.singingSolo}
-          alt="Света поёт на сцене в красном платье"
-          caption="Vocal mode"
+          src={photos.prosecco}
+          alt="Света с бокалом"
+          caption="Prosecco mode"
           className="hero-photo"
           loading="eager"
-          style={{ '--tilt': '-3deg', '--pos': '54% 22%', minHeight: 244 }}
+          style={{ '--tilt': '-3deg', '--pos': 'center 34%', minHeight: 244 }}
         />
         <PhotoCard
           src={photos.lusya}

@@ -1,6 +1,4 @@
 import Button from '../components/Button'
-import PhotoCard from '../components/PhotoCard'
-import { photos } from '../photos'
 export default function Screen11Certificate() {
   const handleClose = () => {
     const tg = window.Telegram?.WebApp
@@ -9,7 +7,6 @@ export default function Screen11Certificate() {
   return (
     <div className="screen">
       <span className="eyebrow">Access granted</span>
-      <PhotoCard src={photos.disco} alt="Света с диско-ободком" caption="certified" className="side-photo" style={{ '--tilt': '3deg', '--pos': 'center 30%', minHeight: 260 }} />
       <div className="paper-panel" style={{ border: '2px solid var(--color-gold)', textAlign: 'center', animation: 'fadeUp 400ms ease-out 200ms both' }}>
         <p style={{ fontFamily: 'var(--font-display)', fontSize: '0.65rem', fontWeight: 700, color: 'var(--color-gold)', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: 'var(--space-lg)' }}>Сертификат допуска</p>
         <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', marginBottom: 'var(--space-sm)' }}>Настоящим подтверждается, что</p>

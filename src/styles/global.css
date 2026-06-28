@@ -181,6 +181,11 @@ body {
   filter: saturate(0.94) contrast(1.03);
 }
 
+.photo-card.contain img {
+  object-fit: contain;
+  background: linear-gradient(135deg, oklch(20% 0.045 150), oklch(94% 0.025 96));
+}
+
 .photo-card figcaption {
   position: absolute;
   left: 12px;

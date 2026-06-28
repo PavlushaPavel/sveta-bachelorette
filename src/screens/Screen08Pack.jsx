@@ -17,7 +17,7 @@ export default function Screen08Pack({ onNext }) {
     <div className="screen">
       <span className="eyebrow">Packing list</span>
       <h1 className="screen-title">Что взять с собой</h1>
-      <PhotoCard src={photos.officeBlue} alt="Света в синем образе" caption="chaos kit" className="side-photo" style={{ '--tilt': '3deg', '--pos': 'center 45%', minHeight: 290 }} />
+      <PhotoCard src={photos.officeBlue} alt="Света в синем образе" caption="chaos kit" className="hero-photo contain" style={{ '--tilt': '3deg', '--pos': 'center top', minHeight: 430, aspectRatio: '0.56' }} />
       <div className="screen-body"><p>Перед девичником система рекомендует взять:</p></div>
       <div className="paper-panel line-list" style={{ animation: 'fadeUp 280ms ease-out 320ms both' }}>
         {PACK_ITEMS.map((item, i) => (

@@ -1,6 +1,4 @@
 import Button from '../components/Button'
-import PhotoCard from '../components/PhotoCard'
-import { photos } from '../photos'
 const NATAL_ITEMS = [
   { mark: 'CO', text: 'Кофе — в доме жизненной силы.' },
   { mark: 'VO', text: 'Вокал — в доме «а давайте споём».' },
@@ -17,10 +15,6 @@ export default function Screen04Natal({ onNext }) {
     <div className="screen">
       <span className="eyebrow">Astro report</span>
       <h1 className="screen-title">Натальная карта Светы</h1>
-      <div className="photo-strip">
-        <PhotoCard src={photos.singingStage} alt="Света поёт на сцене" caption="voice" className="side-photo" style={{ '--tilt': '-4deg', '--pos': '73% 28%' }} />
-        <PhotoCard src={photos.phil} alt="Света и кот Фил" caption="phil" className="side-photo" style={{ '--tilt': '5deg', '--pos': '55% center' }} />
-      </div>
       <div className="screen-body">
         <p>Мы построили твою натальную карту на ближайшие дни.</p>
         <p style={{ marginTop: 'var(--space-sm)' }}>Результат необычный:</p>

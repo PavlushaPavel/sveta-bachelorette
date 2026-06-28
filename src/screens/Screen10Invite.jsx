@@ -9,11 +9,11 @@ export default function Screen10Invite({ onNext }) {
     <div className="screen">
       <span className="eyebrow">Official invite</span>
       <PhotoCard
-        src={photos.singingStage}
-        alt="Света поёт на сцене в красном платье"
+        src={photos.singingSolo}
+        alt="Света одна поёт на сцене в красном платье"
         caption="11 July"
         className="hero-photo"
-        style={{ '--tilt': '-2deg', '--pos': '73% 30%', minHeight: 380 }}
+        style={{ '--tilt': '-2deg', '--pos': 'center 26%', minHeight: 380 }}
       />
       <h1 className="screen-title">Света!</h1>
       <div className="screen-body paper-panel tight">
