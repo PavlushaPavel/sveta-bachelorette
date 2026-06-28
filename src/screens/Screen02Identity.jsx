@@ -3,6 +3,8 @@ import CheckboxItem from '../components/CheckboxItem'
 import Button from '../components/Button'
 import Toast from '../components/Toast'
 import { isIdentityConfirmed } from '../gameState'
+import PhotoCard from '../components/PhotoCard'
+import { photos } from '../photos'
 
 const IDENTITY_ITEMS = [
   { id: 'bmw', label: 'любит BMW' },
@@ -29,12 +31,20 @@ export default function Screen02Identity({ gameState, onToggleChecked, onNext })
 
   return (
     <div className="screen">
+      <span className="eyebrow">Identity check</span>
       <h1 className="screen-title">Проверка личности</h1>
+      <PhotoCard
+        src={photos.fullBodyWhite}
+        alt="Света в белом платье у каменной стены"
+        caption="main character"
+        className="hero-photo"
+        style={{ '--tilt': '2deg', '--pos': '52% 40%', minHeight: 360 }}
+      />
       <div className="screen-body">
         <p>Для допуска к девичнику нужно подтвердить, что перед нами настоящая Света.</p>
         <p style={{ marginTop: 'var(--space-sm)' }}>Отметь всё, что совпадает:</p>
       </div>
-      <div style={{ animation: 'fadeUp 280ms ease-out 360ms both' }}>
+      <div className="paper-panel tight" style={{ animation: 'fadeUp 280ms ease-out 360ms both' }}>
         {IDENTITY_ITEMS.map(item => (
           <CheckboxItem key={item.id} label={item.label} checked={gameState.checkedItems.has(item.id)} onChange={() => onToggleChecked(item.id)} />
         ))}
@@ -45,16 +55,16 @@ export default function Screen02Identity({ gameState, onToggleChecked, onNext })
         </div>
       ) : (
         <div style={{ animation: 'fadeUp 300ms ease-out both' }}>
-          <div style={{ background: 'var(--color-surface)', borderRadius: 16, padding: 'var(--space-lg)', marginBottom: 'var(--space-lg)' }}>
+          <div className="paper-panel" style={{ marginBottom: 'var(--space-lg)' }}>
             <p style={{ fontWeight: 700, marginBottom: 'var(--space-sm)' }}>Личность подтверждена.</p>
             <p style={{ color: 'var(--color-muted)', fontSize: '0.9rem', lineHeight: 1.6 }}>
               Перед нами: Света. 30 лет. Женщина, легенда, будущая жена, кофейный двигатель, вокальная дива и человек, который умеет превращать жизнь в интересную историю.
             </p>
           </div>
-          <Button onClick={onNext}>Продолжить 🐾</Button>
+          <Button onClick={onNext}>Продолжить</Button>
         </div>
       )}
-      <Toast message="🐶 Люсик присоединился к миссии." visible={showToast} />
+      <Toast message="Люсик присоединился к миссии." visible={showToast} />
     </div>
   )
 }

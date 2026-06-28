@@ -1,16 +1,6 @@
 export default function CheckboxItem({ label, checked, onChange }) {
   return (
-    <label
-      onClick={onChange}
-      style={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: 'var(--space-md)',
-        padding: 'var(--space-sm) 0',
-        cursor: 'pointer',
-        userSelect: 'none',
-      }}
-    >
+    <label onClick={onChange} className="line-item" style={{ cursor: 'pointer', userSelect: 'none' }}>
       <span style={{
         flexShrink: 0,
         width: 24,
@@ -30,13 +20,7 @@ export default function CheckboxItem({ label, checked, onChange }) {
           </svg>
         )}
       </span>
-      <span style={{
-        fontFamily: 'var(--font-body)',
-        fontSize: '0.9rem',
-        lineHeight: 1.5,
-        color: checked ? 'var(--color-deep)' : 'var(--color-muted)',
-        transition: 'color 150ms ease',
-      }}>
+      <span style={{ fontSize: '0.92rem', lineHeight: 1.45, color: checked ? 'var(--color-deep)' : 'var(--color-muted)' }}>
         {label}
       </span>
     </label>

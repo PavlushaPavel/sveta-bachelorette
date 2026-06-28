@@ -1,8 +1,13 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function ProgressBar({ stages, onComplete }) {
   const [stageIndex, setStageIndex] = useState(-1)
   const [visibleLabels, setVisibleLabels] = useState([])
+  const onCompleteRef = useRef(onComplete)
+
+  useEffect(() => {
+    onCompleteRef.current = onComplete
+  }, [onComplete])
 
   useEffect(() => {
     let cancelled = false
@@ -18,13 +23,13 @@ export default function ProgressBar({ stages, onComplete }) {
         setVisibleLabels(prev => [...prev, stage.label])
 
         if (i === stages.length - 1) {
-          setTimeout(() => { if (!cancelled) onComplete?.() }, 800)
+          setTimeout(() => { if (!cancelled) onCompleteRef.current?.() }, 800)
         }
       }, delay)
     })
 
     return () => { cancelled = true }
-  }, [])
+  }, [stages])
 
   const currentPercent = stageIndex >= 0 ? stages[stageIndex].percent : 0
 

@@ -1,16 +1,35 @@
 import Button from '../components/Button'
+import PhotoCard from '../components/PhotoCard'
+import { photos } from '../photos'
 
 export default function Screen01Mission({ onNext }) {
   return (
-    <div className="screen" style={{ justifyContent: 'center', minHeight: '100vh' }}>
-      <div style={{ textAlign: 'center', animation: 'fadeUp 400ms ease-out 100ms both' }}>
-        <p style={{ fontSize: '2.5rem', marginBottom: 'var(--space-md)' }}>🍸</p>
+    <div className="screen">
+      <span className="eyebrow">Sveta Beach Club</span>
+      <div className="photo-strip">
+        <PhotoCard
+          src={photos.singingSolo}
+          alt="Света поёт на сцене в красном платье"
+          caption="Vocal mode"
+          className="hero-photo"
+          loading="eager"
+          style={{ '--tilt': '-3deg', '--pos': '54% 22%', minHeight: 244 }}
+        />
+        <PhotoCard
+          src={photos.lusya}
+          alt="Света держит корги Люсю"
+          caption="Lusya"
+          className="side-photo"
+          loading="eager"
+          style={{ '--tilt': '4deg', '--pos': '42% center', minHeight: 152 }}
+        />
       </div>
-      <h1 className="screen-title" style={{ textAlign: 'center' }}>Света, привет.</h1>
-      <div className="screen-body">
+
+      <h1 className="screen-title">Света, привет.</h1>
+      <div className="screen-body paper-panel tight">
         <p>Это не просто сообщение.</p>
         <p>Это официальный вход в секретную операцию:</p>
-        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '0.9rem', color: 'var(--color-lime-pop)', margin: 'var(--space-md) 0', lineHeight: 1.4 }}>
+        <p style={{ fontFamily: 'var(--font-display)', fontWeight: 800, color: 'var(--color-lime-pop)', margin: 'var(--space-md) 0', lineHeight: 1.08, letterSpacing: '-0.02em' }}>
           «Света, Максим и второй сезон любви»
         </p>
         <p>Свете уже 30.</p>
@@ -20,7 +39,7 @@ export default function Screen01Mission({ onNext }) {
         <p style={{ fontWeight: 700 }}>Девичник.</p>
       </div>
       <div className="screen-cta">
-        <Button onClick={onNext}>Начать миссию 🍸</Button>
+        <Button onClick={onNext}>Начать миссию</Button>
       </div>
     </div>
   )

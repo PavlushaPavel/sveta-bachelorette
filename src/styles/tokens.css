@@ -1,26 +1,31 @@
 /* src/styles/tokens.css */
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Mulish:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display:wght@600;700;800&family=Wix+Madefor+Text:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Colors — Beach Club palette extracted from mood board reference */
-  --color-bg:        oklch(97.5% 0.008 105); /* warm ivory — cream white of the stripe card */
-  --color-surface:   oklch(94% 0.032 140);   /* sage green — card surfaces */
-  --color-deep:      oklch(28% 0.10 153);    /* hunter green — dark stripe color */
-  --color-lime-pop:  oklch(57% 0.19 144);    /* botanical green — CTAs */
-  --color-gold:      oklch(67% 0.13 73);     /* prosecco gold */
-  --color-champagne: oklch(95% 0.022 92);    /* warm champagne blush */
-  --color-muted:     oklch(54% 0.055 148);   /* sage muted text */
+  --color-bg:        oklch(96.5% 0.018 105);
+  --color-surface:   oklch(92.5% 0.038 142);
+  --color-paper:     oklch(98% 0.014 97);
+  --color-deep:      oklch(25% 0.082 152);
+  --color-ink:       oklch(18% 0.045 150);
+  --color-muted:     oklch(48% 0.045 145);
+  --color-lime-pop:  oklch(54% 0.145 144);
+  --color-gold:      oklch(70% 0.11 78);
+  --color-champagne: oklch(94% 0.03 86);
+  --color-red:       oklch(48% 0.17 28);
+  --color-line:      oklch(79% 0.035 132);
 
-  /* Typography */
-  --font-display: 'Unbounded', sans-serif;
-  --font-body:    'Mulish', sans-serif;
+  --font-display: 'Wix Madefor Display', sans-serif;
+  --font-body:    'Wix Madefor Text', sans-serif;
 
-  /* Spacing */
   --space-xs:  4px;
   --space-sm:  8px;
+  --space-ms:  12px;
   --space-md:  16px;
   --space-lg:  24px;
   --space-xl:  32px;
   --space-2xl: 48px;
   --space-3xl: 64px;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
 }
